@@ -1,0 +1,125 @@
+
+
+.registerForm{
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #1a1a1a solid 1px;
+  .formlogoImage{
+    width: 40rem;
+    height: 40rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+
+    display: block;
+    .eye{
+      width: 1.9rem;
+      height: 1.9rem;
+      z-index: 2;
+      position: relative;
+      background-position:center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .left{
+      background-image: url("../Pinguin_img/Penguin_eye_leftPNG.png");
+      //left: 233px;
+      top: 172px;
+    }
+    .right{
+      background-image: url("../Pinguin_img/Penguin_eye_rightPNG.png");
+      //left: 323px;
+      top: 139px;
+
+    }
+  }
+  .registerImage{
+    z-index: 1;
+    background-image: url("../Pinguin_img/Penguin4PNG.png");
+  }
+  .passwordImage{
+    z-index: 1;
+    background-image: url("../Pinguin_img/Penguin3_closePNG.png");
+  }
+  .formButton {
+    display: inline-flex;
+    height: 2.5rem;
+    width: 9.375rem;
+    border: 2px solid #BFC0C0;
+    margin: 20px 20px 20px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: $buttonColor;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 7px 6px 9px 2px rgba(0, 0, 0, 0.5);
+
+    &:hover #translate{
+      left: 0;
+    }
+    a{
+      position: relative;
+      transition: all .45s ease-Out;
+      text-decoration: none;
+      color: black;
+      font-family: $mainFonts;
+    }
+    &:hover #translate{
+      left: 0;
+    }
+    &:hover a {
+      color: white;
+    }
+  }
+  input{
+    box-sizing: border-box;
+    width: 17rem;
+    height: 3rem;
+    border-radius: 10px 10px 10px 10px;
+    font-family: $mainFonts;
+    font-size: 35px;
+    letter-spacing:5px;
+    padding: 0 30px;
+    box-shadow: inset 13px 22px 23px -16px $buttonColor;
+
+  }
+  .formPassword{
+    font-size: 50px;
+  }
+  label{
+    font-family: $mainFonts;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    font-size: 20px;
+  }
+
+  background-color: $mainBackgroundColor;
+
+
+  }
+
+
+#translate {
+  transform: rotate(50deg);
+  width: 100%;
+  height: 250%;
+  left: -200px;
+  top: -30px;
+  background: hsl(210, 100%, 60%)
+;
+  position: absolute;
+  transition: all .3s ease-Out;
+}
+button a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
