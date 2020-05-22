@@ -60,7 +60,7 @@ export default class RegisterForm extends Component {
                 <label for={"formLogin"}>Login</label>
                 <input type={'text'} id={'loginInput'} value={this.state.registerInputValue} onClick={this.loginFormClick} onChange={this.handleChange} />
                 <label htmlFor={"formPassword"}>Hasło</label>
-                <input type={'password'} id={'formPassword'}  onClick={this.passwordFormClick}/>
+                <input type={'password'} id={'formPassword'}  onFocus={this.passwordFormClick}/>
                 <FormButtons buttonText={this.props.buttonText}></FormButtons>
             </form>
         </>
