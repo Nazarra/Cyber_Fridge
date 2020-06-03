@@ -1,10 +1,19 @@
 import React from 'react';
 import RegisterForm from "./registerForm";
+import Header from "./Header";
 import './scss/main.scss';
 
 
 function App() {
-  return ( <RegisterForm LogoClassName={"registerImage"} buttonText={"Rejestracja"}></RegisterForm>
+
+  return (
+
+      <div className={"grid-container"}>
+        <Header/>
+        {/*<RegisterForm className={ 'col-'} LogoClassName={"registerImage"} buttonText={"Rejestracja"}></RegisterForm>*/}
+      </div>
+
+
   );
 }
 

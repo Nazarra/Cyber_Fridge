@@ -13,15 +13,14 @@ export default class RegisterForm extends Component {
             leftEyeMovePosition: 230,
             rightEyeBasePosition: 321,
             rightEyeMovePosition: 321,
-            registerInputValue: '',
         };
     }
 
     handleChange=(event)=>{
-        console.log(this.state.registerInputValue)
-        this.setState({registerInputValue: event.target.value ,
-            leftEyeMovePosition: this.state.leftEyeBasePosition + this.state.registerInputValue.length,
-            rightEyeMovePosition: this.state.rightEyeBasePosition + this.state.registerInputValue.length,
+        let registerInputValue = event.target.value
+        this.setState({registerInputValue: registerInputValue,
+            leftEyeMovePosition: this.state.leftEyeBasePosition + registerInputValue.length ,
+            rightEyeMovePosition: this.state.rightEyeBasePosition + registerInputValue.length,
         })
     }
 
@@ -52,7 +51,7 @@ export default class RegisterForm extends Component {
 
     return (
         <>
-            <form className={'registerForm'}>
+            <form className={'registerForm col-5'}>
                 <div className={"formlogoImage " + this.state.logoBackground} >
                     <div style={leftEyeStyle} className={"eye left"}></div>
                     <div style={rightEyeStyle} className={"eye right"}></div>
