@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: #1a1a1a solid 1px;
   .formlogoImage{
     width: 40rem;
     height: 40rem;
@@ -24,12 +23,10 @@
     }
     .left{
       background-image: url("../Pinguin_img/Penguin_eye_leftPNG.png");
-      //left: 233px;
       top: 172px;
     }
     .right{
       background-image: url("../Pinguin_img/Penguin_eye_rightPNG.png");
-      //left: 323px;
       top: 139px;
 
     }
@@ -50,7 +47,7 @@
     margin: 20px 20px 20px 20px;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: .8em;
+    font-size: 0.625rem;
     letter-spacing: 1.5px;
     align-items: center;
     justify-content: center;
@@ -69,7 +66,7 @@
       transition: all .45s ease-Out;
       text-decoration: none;
       color: black;
-      font-family: $mainFonts;
+      font-family: $logoFonts;
     }
     &:hover #translate{
       left: 0;
@@ -83,8 +80,8 @@
     width: 17rem;
     height: 3rem;
     border-radius: 10px 10px 10px 10px;
-    font-family: $mainFonts;
-    font-size: 35px;
+    font-family: $logoFonts;
+    font-size: 1rem;
     letter-spacing:5px;
     padding: 0 30px;
     box-shadow: inset 13px 22px 23px -16px $buttonColor;
@@ -94,7 +91,7 @@
     font-size: 50px;
   }
   label{
-    font-family: $mainFonts;
+    font-family: $logoFonts;
     margin-top: 1rem;
     margin-bottom: 0.3rem;
     font-size: 20px;
