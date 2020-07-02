@@ -1,6 +1,10 @@
 import React, {useState} from "react";
 import NavigatorButton from "./navigatorButton";
-import Header from "./Header";
+import MyAccountNavi from "./MyAccountNavi";
+import MyFridgeNavi from "./MyFridgeNavi";
+import RecipesNavi from "./RecipesNavi";
+import ShoppingListNavi from "./ShoppingListNavi"
+import HeaderNavigation from "./headerNavigation";
 
 
 const LoginNavi = (props) => {
@@ -10,82 +14,102 @@ const LoginNavi = (props) => {
     const [expandShoppingList, setExpandShoppingList] = useState(false)
     const [expandRecipes, setExpandRecipes] = useState(false)
     const [loginNaviClassName, setLoginNaviClassName] = useState(props.loginNaviClassName)
+    const [active, setActive] = useState(false)
+    const [mobileNaviActive, setMobileNaviActive] = useState(0)
 
-    const handleAccountClick = ()=>{
+    const handleAccountClick = () => {
         setExpandMyAccount(!expandMyAccount);
         setExpandMyFridge(false);
         setExpandShoppingList(false);
         setExpandRecipes(false);
+        setMobileNaviActive(1)
+        setActive(!active)
     }
-    const handleFridgeClick = ()=>{
+    const handleFridgeClick = () => {
         setExpandMyAccount(false)
         setExpandMyFridge(!expandMyFridge)
         setExpandShoppingList(false)
         setExpandRecipes(false)
+        setMobileNaviActive(2)
+        setActive(!active)
+
     }
-    const handleShoppingListClick = () =>{
+    const handleShoppingListClick = () => {
         setExpandMyAccount(false)
         setExpandMyFridge(false)
         setExpandShoppingList(!expandShoppingList)
         setExpandRecipes(false)
+        setMobileNaviActive(3)
+        setActive(!active)
     }
-    const handleRecipesClick = () =>{
+    const handleRecipesClick = () => {
         setExpandMyAccount(false);
         setExpandMyFridge(false);
         setExpandShoppingList(false);
         setExpandRecipes(!expandRecipes);
+        setMobileNaviActive(4)
+        setActive(!active)
+    }
+
+    const handleBackClick = () => {
+        setActive(!active)
+        setMobileNaviActive(0)
     }
 
 
 
-    return(
+
+
+    let mobileNaviElement = null;
+
+    if (mobileNaviActive === 1) {
+        mobileNaviElement = <MyAccountNavi componentClassName={"MyAccountNaviPhone"}/>
+    } else if (mobileNaviActive === 2) {
+        mobileNaviElement = <MyFridgeNavi componentClassName={"MyFridgeNaviPhone"}/>;
+    } else if (mobileNaviActive === 3) {
+        mobileNaviElement = <ShoppingListNavi componentClassName={"ShoppingListPhone"}/>;
+    } else if (mobileNaviActive === 4) {
+        mobileNaviElement = <RecipesNavi componentClassName={"RecipesPhone"}/>
+    } else {
+        mobileNaviElement =  null
+    }
+
+
+
+
+    return (
         <>
             <section className={loginNaviClassName}>
-        {!userOnline ? null :
-            <nav className={"LoginNavi"} >
-                <NavigatorButton buttonName="Moje konto"
-                                 onClick={handleAccountClick}
-                />
-                <NavigatorButton buttonName="Moja lodówka"
-                                 onClick={handleFridgeClick}
-                />
-                <NavigatorButton buttonName="Lista zakupów"
-                                 onClick={handleShoppingListClick}
-                />
-                <NavigatorButton buttonName="Przepisy"
-                                 onClick={handleRecipesClick}
-                />
-            </nav>
-        }
-        {!expandMyAccount ? null :
-                    <nav className={"MyAccount"}>
-                        <NavigatorButton buttonName="Zmień login"/>
-                        <NavigatorButton buttonName="Zmień hasło"/>
-                        <NavigatorButton buttonName="Usuń konto"/>
-                    </nav>
-        }
-        {!expandMyFridge ? null :
-                    <nav className={"MyFridge"}>
-                        <NavigatorButton buttonName="Produkty w lodówce"/>
-                        <NavigatorButton buttonName="Dodaj produkt"/>
-                        <NavigatorButton buttonName="Usuń produkt"/>
-                    </nav>
+                {!userOnline ? null : <nav className={"LoginNavi"}>
+
+
+                    {!active ? null : <div className={'menu-warp'}>
+                        <button className={"backButton"} onClick={() => setActive(!active)}>
+                            Powrót
+                        </button>
+                        {mobileNaviElement}
+                    </div>
+                    }
+
+                    <NavigatorButton buttonName="Moje konto" onClick={handleAccountClick}/>
+
+                    <NavigatorButton buttonName="Moja lodówka" onClick={handleFridgeClick}/>
+
+                    <NavigatorButton buttonName="Lista zakupów" onClick={handleShoppingListClick}/>
+
+                    <NavigatorButton buttonName="Przepisy" onClick={handleRecipesClick}/>
+
+                </nav>
                 }
-        {!expandShoppingList ? null :
-                    <nav className={"ShoppingList"}>
-                        <NavigatorButton buttonName="Stwórz listę"/>
-                        <NavigatorButton buttonName="Moje listy"/>
-                        <NavigatorButton buttonName="Usuń listę"/>
-                    </nav>
-                }
-        {!expandRecipes ? null :
-                    <nav className={"Recipes"}>
-                        <NavigatorButton buttonName="Dodaj przepis"/>
-                        <NavigatorButton buttonName="Moje przepisy"/>
-                        <NavigatorButton buttonName="Wyszukaj"/>
-                        <NavigatorButton buttonName="Co mogę ugotować ?"/>
-                    </nav>
-        }
+                {!expandMyAccount ? null : <MyAccountNavi componentClassName={"MyAccountNavi"}/>}
+
+                {!expandMyFridge ? null : <MyFridgeNavi componentClassName={"MyFridgeNavi"}/>}
+
+                {!expandShoppingList ? null : <ShoppingListNavi componentClassName={"ShoppingList"}/>}
+
+                {!expandRecipes ? null : <RecipesNavi componentClassName={"Recipes"}/>}
+
+
             </section>
         </>
     )

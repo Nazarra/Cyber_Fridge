@@ -7,12 +7,10 @@ import HeaderNavigation from './headerNavigation'
 const Header = (props) => {
     const [userOnline,setUserOnline] = useState(props.userOnline);
     const [active,setActive] = useState(false)
-    // const [burgerColor , setBurgerColor] = useState(!active ? "rgb(0, 51, 204)" : 'white')
-
 
     return (
         <>
-            <header className={"header col-12"}>
+            <header className={"header"}>
 
 
                 <Burger active={active}

@@ -4,4 +4,10 @@ section{
   width: 100%;
 
 }
+@media #{$phone}{
+  section{
+    height: 75vh;
+  }
 
+
+}

@@ -117,16 +117,16 @@ header{
         width: 100vw;
         height: 100vh;
         position: absolute;
-        background-color: darkblue;
+        background-color: darkgrey;
         display: flex;
-        .mobileHeaderNav{
-          flex-direction: column-reverse;
-        }
+        background-image: url("../Img/moblineNavi.png");
+        background-position:center;
+        background-size: 95% 95%;
+        background-repeat: no-repeat;
+        display: block;
+        flex-direction: column-reverse;
+
       }
-
-
-
-
   }
 
 

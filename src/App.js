@@ -20,10 +20,10 @@ function App() {
         <Header userOnline={userOnline}/>
         <section className={"contentContainer"}>
 
-            {/*/>*/}
+        {/*    />*/}
 
 
-        {/*<LoginNavi userOnline={userOnline} loginNaviClassName={"LoginNaviContainer"}/>*/}
+        <LoginNavi userOnline={userOnline} loginNaviClassName={"LoginNaviContainer"}/>
         {/*    <article>*/}
         {/*        <RecipeForm/>*/}
         {/*    </article>*/}
