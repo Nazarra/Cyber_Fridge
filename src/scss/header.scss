@@ -11,7 +11,6 @@ header{
   }
   @media #{$desktop}{
     height:  27rem;
-    border: 1px solid rebeccapurple;
     background-image: url("../Img/MainLogo.PNG");
     background-position:left;
     background-size: 66.5rem 100%;
@@ -20,6 +19,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+
     h1{
       font-size: 4.5rem;
       font-family: $logoFonts;
@@ -43,13 +43,17 @@ header{
         box-shadow: 7px 6px 9px 2px $mainColor;
         color: $mainColor;
         cursor: pointer;
+        transition: all 1.3s ease-Out;
       }
+    }
+    .burger_hamburger-box__3lYk7{
+      display: none;
     }
   }
 
   @media #{$tablet}{
     height: 27vh;
-    border: 1px solid rebeccapurple;
+
     background-image: url("../Img/MainLogo.PNG");
     background-position:center;
     background-size: 100% 100%;
@@ -75,27 +79,54 @@ header{
       font-size: 0.7rem;
       height: 3rem;
     }
-
+  .burger_hamburger-box__3lYk7{
+    display: none;
+  }
   }
 
   @media #{$phone}{
     height: 27vh;
-    border: 1px solid rebeccapurple;
+    z-index: 1;
     background-image: url("../Img/MainLogoMobile.PNG");
     background-position:center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    justify-content: space-between;
     display: flex;
+
     h1{
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-family: $logoFonts;
-      align-self: center;
-      margin-bottom: 13px;
-      margin-left: 16px;
-      border: 1px pink solid;
+      margin-bottom: 6%;
+      margin-left: 3%;
+      z-index: 2;
 
 
     }
+    .headerNav{
+      display: none;
+    }
+    .burger_hamburger__21cuQ{
+      display: flex;
+      margin-left: 3%;
+      margin-top: 3%;
+      z-index: 4;
+    }
+      .menu-warp{
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: darkgrey;
+        display: flex;
+        background-image: url("../Img/moblineNavi.png");
+        background-position:center;
+        background-size: 95% 95%;
+        background-repeat: no-repeat;
+        display: block;
+        flex-direction: column-reverse;
+
+      }
   }
 
 

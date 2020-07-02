@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 
 //Media
 $phone : "(max-width: 800px)";
@@ -17,8 +19,11 @@ $desktop: "(min-width: 1025px)";
 $buttonColor: hsl(210, 100%, 85%);
 $mainBackgroundColor: hsl(211, 100%, 95%);
 $mainColor: rgba(66, 211, 255, 1);
+$naviColor: rgb(0, 51, 204);
+$naviButtonColor: #e6f2ff;
 
 
 // FONTS
 $mainFonts: 'Piedra', cursive;
 $logoFonts: 'Press Start 2P', cursive;
+$naviFonts: 'Sriracha', cursive;

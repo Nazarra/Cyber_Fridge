@@ -4,4 +4,24 @@
 @import "reset";
 @import "header";
 @import "navigatorButton";
+@import "LoginNavi";
+@import "ContentContainer";
+@import "Recipe";
+@import "section";
+@import "footer";
+@import "mobileHeaderNav";
 
+@media #{$desktop}{
+  header{
+    width: 99vw;
+  }
+body{
+  display: flex;
+  flex-direction: column;
+  width: 99vw;
+  border: #1a1a1a 1px solid;
+}
+  footer{
+    width: 99vw;
+  }
+}

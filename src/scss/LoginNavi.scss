@@ -1,0 +1,105 @@
+@media #{$phone}{
+  .LoginNaviContainer{
+    .MyAccountNavi{
+      display: none;
+    }
+    .MyFridgeNavi{
+      display: none;
+    }
+    .ShoppingList{
+      display: none;
+    }
+    .Recipes{
+      display: none;
+    }
+
+  }
+.LoginNavi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $logoFonts;
+
+
+  button{
+    width: 90vw;
+    height: 15vh;
+    background-color: $naviColor;
+    border-radius: 90px 100px 90px 100px;
+    font-family: $logoFonts;
+    margin-top: 2vh;
+    color: wheat;
+    font-size: 1rem;
+  }
+  .menu-warp{
+    z-index: 3;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    background-color: white;
+
+  }
+
+    .LoginNaviContainer{
+      height: 60vh;
+  }}}
+@media #{$tablet} , #{$desktop}  {
+  .menu-warp{
+    display: none;
+  }
+  .LoginNaviContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 4.5rem;
+    background-color:#003399 ;
+  }
+  .extend{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-right: 2vw;
+    width: 40%;
+    button{
+      height: 2.5rem;
+      flex-grow: 1;
+      border: 1px;
+      font-family: $naviFonts;
+      font-size: 0.9rem;
+      box-shadow: inset 0 -8px $mainColor;
+      background-color: $naviButtonColor;
+
+     &:first-child{
+        border-radius: 20px 0 0 20px;
+      }
+      &:last-child{
+        border-radius: 0 20px 20px 0;
+      }
+    }
+
+  }
+  .LoginNavi{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin-left: 2vw;
+    width: 40%;
+
+    button {
+      height: 2.5rem;
+      flex-grow: 1;
+      border: 1px;
+      font-family: $naviFonts;
+      font-size: 1rem;
+      box-shadow: inset 0 8px $mainColor;
+      background-color: $naviButtonColor;
+
+      &:first-child {
+        border-radius: 20px 0 0 20px;
+      }
+      &:last-child {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+  }
+}
