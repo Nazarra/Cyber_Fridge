@@ -99,15 +99,16 @@ const LoginNavi = (props) => {
 
                     <NavigatorButton buttonName="Przepisy" onClick={handleRecipesClick}/>
 
+
                 </nav>
                 }
-                {!expandMyAccount ? null : <MyAccountNavi componentClassName={"MyAccountNavi"}/>}
+                {!expandMyAccount ? null : <MyAccountNavi componentClassName={"MyAccountNavi extend"}/>}
 
-                {!expandMyFridge ? null : <MyFridgeNavi componentClassName={"MyFridgeNavi"}/>}
+                {!expandMyFridge ? null : <MyFridgeNavi componentClassName={"MyFridgeNavi extend"}/>}
 
-                {!expandShoppingList ? null : <ShoppingListNavi componentClassName={"ShoppingList"}/>}
+                {!expandShoppingList ? null : <ShoppingListNavi componentClassName={"ShoppingList extend"}/>}
 
-                {!expandRecipes ? null : <RecipesNavi componentClassName={"Recipes"}/>}
+                {!expandRecipes ? null : <RecipesNavi componentClassName={"Recipes extend"}/>}
 
 
             </section>
