@@ -34,9 +34,8 @@ function App() {
 
 
         </section>
-        {/*<RegisterForm   LogoClassName={"registerImage"} buttonText={"Rejestracja"}></RegisterForm>*/}
+        <Footer />
         </body>
-    <Footer />
     </>
 
 

@@ -1,41 +1,55 @@
-footer{
-  width: 100vw;
-  height: 16vh;
-  //display: flex;
-  //flex-direction: column;
-  border: none;
-  background-color: $naviColor;
-  .footerImage{
+//@media #{$desktop , $tablet} {
+  footer {
     width: 100vw;
-    height: 20vh;
-    background-image:url("../Img/footerImg.png") ;
-    background-repeat: no-repeat;
-    background-position:top;
-    background-size: 105% 100%;
-    position: relative;
-    bottom: 2rem;
-  }
-  .footerContent{
-    display: flex;
-    position: relative;
-    bottom: 7rem;
-    justify-content: space-between;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    ul{
-      .footerContactHeader{
-        font-size: 2rem;
+    height: 16vh;
+    //display: flex;
+    //flex-direction: column;
+    border: none;
+    background-color: $naviColor;
+
+    .footerImage {
+      width: 100vw;
+      //height: 20vh;
+      background-image: url("../Img/footerImg.png");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 105% 100%;
+      position: relative;
+      //bottom: 2rem;
+      @media #{$tablet} {
+
+        height: 18vh;
       }
-      li{
-        color: $buttonColor;
-        //font-size: 2rem;
-        ol{
-          font-size: 1rem;
-          li{
+    }
+
+    .footerContent {
+      display: flex;
+      position: relative;
+      bottom: 7rem;
+      justify-content: space-between;
+      margin-right: 1rem;
+      margin-left: 1rem;
+      @media #{$tablet} {
+
+        bottom: 9rem;
+      }
+
+      ul {
+        .footerContactHeader {
+          font-size: 2rem;
+        }
+
+        li {
+          color: $buttonColor;
+          //font-size: 2rem;
+          ol {
             font-size: 1rem;
+
+            li {
+              font-size: 1rem;
+            }
           }
         }
       }
     }
   }
-}
