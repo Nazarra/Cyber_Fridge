@@ -8,6 +8,7 @@ export default function FormButton(props) {
          <button className={"formButton"}>
             <div id={"translate"}></div>
             <a href={'#'}>{props.buttonText}</a>
+             onClick={props.funcion}
          </button>
             </>
     )};

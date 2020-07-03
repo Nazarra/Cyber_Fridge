@@ -4,7 +4,6 @@ import MyAccountNavi from "./MyAccountNavi";
 import MyFridgeNavi from "./MyFridgeNavi";
 import RecipesNavi from "./RecipesNavi";
 import ShoppingListNavi from "./ShoppingListNavi"
-import HeaderNavigation from "./headerNavigation";
 
 
 const LoginNavi = (props) => {
@@ -91,13 +90,14 @@ const LoginNavi = (props) => {
                     </div>
                     }
 
-                    <NavigatorButton buttonName="Moje konto" onClick={handleAccountClick}/>
+                    {!userOnline ? null : <NavigatorButton buttonName="Moje konto" onClick={handleAccountClick}/>}
 
-                    <NavigatorButton buttonName="Moja lodówka" onClick={handleFridgeClick}/>
+                    {!userOnline ? null : <NavigatorButton buttonName="Moja lodówka" onClick={handleFridgeClick}/>}
 
-                    <NavigatorButton buttonName="Lista zakupów" onClick={handleShoppingListClick}/>
+                    {!userOnline ? null : <NavigatorButton buttonName="Lista zakupów" onClick={handleShoppingListClick}/>}
 
-                    <NavigatorButton buttonName="Przepisy" onClick={handleRecipesClick}/>
+                    {!userOnline ? null : <NavigatorButton buttonName="Przepisy" onClick={handleRecipesClick}/>}
+
 
 
                 </nav>

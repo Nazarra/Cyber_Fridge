@@ -1,13 +1,8 @@
-
 .contentContainer{
-  //background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(11,11,191,1) 0%, rgba(255,255,255,0.9962359943977591) 20%);
-  flex-direction: row;
   display: flex;
-
-  article{
-    width: 60%;
-    height: 100%;
-  }
+  flex-direction: column;
+  padding-bottom: 5rem;
+  background-color: $naviButtonColor;
 
 }
 

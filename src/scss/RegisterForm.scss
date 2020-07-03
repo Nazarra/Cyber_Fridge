@@ -1,121 +1,201 @@
-
-
-.registerForm{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .formlogoImage{
+@media #{$desktop}, #{$tablet} {
+  .formlogoImage {
     width: 40rem;
     height: 40rem;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
 
     display: block;
-    .eye{
+
+    .eye {
       width: 1.9rem;
       height: 1.9rem;
       z-index: 2;
       position: relative;
-      background-position:center;
+      background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
     }
-    .left{
+
+    .left {
       background-image: url("../Pinguin_img/Penguin_eye_leftPNG.png");
       top: 172px;
     }
-    .right{
+
+    .right {
       background-image: url("../Pinguin_img/Penguin_eye_rightPNG.png");
       top: 139px;
 
     }
+
   }
-  .registerImage{
+  .ErrorContainer{
+    border: 1px ridge black;
+    background-color: #f2eecb;
+    font-size: 1.6rem;
+    text-align: center;
+    vertical-align: middle;
+    display:table-cell;
+
+    border-radius: 20px 20px 0px 20px;
+
+  }
+
+  .registerImage {
     z-index: 1;
     background-image: url("../Pinguin_img/Penguin4PNG.png");
   }
-  .passwordImage{
+
+  .passwordImage {
     z-index: 1;
     background-image: url("../Pinguin_img/Penguin3_closePNG.png");
   }
-  .formButton {
-    display: inline-flex;
-    height: 2.5rem;
-    width: 9.375rem;
-    border: 2px solid #BFC0C0;
-    margin: 20px 20px 20px 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 0.625rem;
-    letter-spacing: 1.5px;
+
+}
+  .registerForm {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: $buttonColor;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 7px 6px 9px 2px rgba(0, 0, 0, 0.5);
-
-    &:hover #translate{
-      left: 0;
-    }
-    a{
-      position: relative;
-      transition: all .45s ease-Out;
+    .formButton {
+      display: inline-flex;
+      height: 2.5rem;
+      width: 9.375rem;
+      border: 2px solid #BFC0C0;
+      margin: 20px 20px 20px 20px;
+      text-transform: uppercase;
       text-decoration: none;
-      color: black;
+      font-size: 0.625rem;
+      letter-spacing: 1.5px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: $buttonColor;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 7px 6px 9px 2px rgba(0, 0, 0, 0.5);
+
+      &:hover #translate {
+        left: 0;
+      }
+
+      a {
+        position: relative;
+        transition: all .45s ease-Out;
+        text-decoration: none;
+        color: black;
+        font-family: $logoFonts;
+      }
+
+      &:hover #translate {
+        left: 0;
+      }
+
+      &:hover a {
+        color: white;
+      }
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 17rem;
+      height: 3rem;
+      border-radius: 10px 10px 10px 10px;
       font-family: $logoFonts;
+      font-size: 1rem;
+      letter-spacing: 5px;
+      padding: 0 30px;
+      box-shadow: inset 13px 22px 23px -16px $buttonColor;
+
     }
-    &:hover #translate{
-      left: 0;
+
+    .formPassword {
+      font-size: 50px;
     }
-    &:hover a {
-      color: white;
+
+    label {
+      font-family: $logoFonts;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 20px;
     }
-  }
-  input{
-    box-sizing: border-box;
-    width: 17rem;
-    height: 3rem;
-    border-radius: 10px 10px 10px 10px;
-    font-family: $logoFonts;
-    font-size: 1rem;
-    letter-spacing:5px;
-    padding: 0 30px;
-    box-shadow: inset 13px 22px 23px -16px $buttonColor;
 
-  }
-  .formPassword{
-    font-size: 50px;
-  }
-  label{
-    font-family: $logoFonts;
-    margin-top: 1rem;
-    margin-bottom: 0.3rem;
-    font-size: 20px;
-  }
-
-  background-color: $mainBackgroundColor;
+    background-color: $mainBackgroundColor;
 
 
   }
 
 
-#translate {
-  transform: rotate(50deg);
-  width: 100%;
-  height: 250%;
-  left: -200px;
-  top: -30px;
-  background: hsl(210, 100%, 60%)
-;
-  position: absolute;
-  transition: all .3s ease-Out;
+  #translate {
+    transform: rotate(50deg);
+    width: 100%;
+    height: 250%;
+    left: -200px;
+    top: -30px;
+    background: hsl(210, 100%, 60%);
+    position: absolute;
+    transition: all .3s ease-Out;
+  }
+  button a {
+    position: relative;
+    transition: all .45s ease-Out;
+  }
+
+  @media #{$tablet} {
+    .ErrorContainer{
+      position: absolute;
+      top: 28rem;
+      left: 2rem;
+      width: 30vw;
+      height: 10vh;
+
+    }
+
+  }
+
+@media #{$desktop} {
+  .ErrorContainer {
+    position: absolute;
+    top: 33rem;
+    left: 33rem;
+    padding: 20px;
+    width: 19vw;
+    height: 10vh;
+  }
 }
-button a {
-  position: relative;
-  transition: all .45s ease-Out;
-}
+
+
+  @media #{$phone} {
+    .formlogoImage {
+      width: 100vw;
+      height: 45vh;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      display: block;
+    }
+    .registerImage {
+        z-index: 1;
+        background-image: url("../Pinguin_img/Penguin3__openPNG.png");
+      }
+
+      .passwordImage {
+        z-index: 1;
+        background-image: url("../Pinguin_img/Penguin3_closePNG.png");
+      }
+    .ErrorContainer{
+      width: 80vw;
+      height: 10vh;
+      border: 2px ridge black;
+      background-color: #f2eecb;
+      font-size: 1.3rem;
+      text-align: center;
+      vertical-align: middle;
+      display:table-cell
+    }
+  }
+
+
 

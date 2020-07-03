@@ -3,9 +3,10 @@ import RegisterForm from "./component/registerForm";
 import Header from "./component/Header";
 import LoginNavi from "./component/LoginNavi";
 import RecipeForm from "./component/RecipeForm";
+import LoginForm from "./component/LoginForm";
 import './scss/main.scss';
-import Burger from 'react-css-burger';
-
+// import Burger from 'react-css-burger';
+import Footer from "./component/footer";
 
 
 
@@ -19,21 +20,23 @@ function App() {
     <body>
         <Header userOnline={userOnline}/>
         <section className={"contentContainer"}>
+        <LoginNavi loginNaviClassName={"LoginNaviContainer"} userOnline={userOnline} />
+        <LoginForm   LogoClassName={"registerImage"} buttonText={"Zaloguj"}></LoginForm>
+        {/*<RegisterForm userOnline={userOnline}  buttonText={"Rejestracja"}/>*/}
+            {/*<article>*/}
+            {/*    <RecipeForm/>*/}
+            {/*</article>*/}
+            {/*<RegisterForm   LogoClassName={"registerImage"} buttonText={"Rejestracja"}></RegisterForm>*/}
+            {/*<LoginForm   LogoClassName={"registerImage"} buttonText={"Zaloguj"}></LoginForm>*/}
 
-        {/*    />*/}
 
-
-        <LoginNavi userOnline={userOnline} loginNaviClassName={"LoginNaviContainer"}/>
-        {/*    <article>*/}
-        {/*        <RecipeForm/>*/}
-        {/*    </article>*/}
 
 
 
         </section>
         {/*<RegisterForm   LogoClassName={"registerImage"} buttonText={"Rejestracja"}></RegisterForm>*/}
         </body>
-    <footer></footer>
+    <Footer />
     </>
 
 
