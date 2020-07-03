@@ -1,0 +1,8 @@
+ handleFormVali = (event) =>{
+        if(this.props.login != this.props.dataLogin || this.props.password != this.props.dataPassword){
+            event.preventDefault();
+            this.setState({currentError: "Login lub hasło są nieprawidłowe!"})
+        }else {
+            this.setState({currentError: ""})
+        }
+    }

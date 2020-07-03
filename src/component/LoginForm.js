@@ -6,7 +6,6 @@ export default class RegisterForm extends Component {
         super(props);
         this.state = {
             password: '',
-            repeatPassword: '',
             buttonText: this.props.buttonText,
             login: " ",
             logoBackground: 'registerImage',
@@ -17,6 +16,8 @@ export default class RegisterForm extends Component {
             rightEyeMovePosition: 321,
             currentError: "",
             textLength: 0,
+            dataLogin: 'login',
+            dataPassword: 'Password1'
         };
     }
 
@@ -34,50 +35,22 @@ export default class RegisterForm extends Component {
             rightEyeMovePosition: this.state.rightEyeBasePosition + event.target.value.length,
         })};
 
-
-    handleLoginValidation = (event) =>{
-        const reg = new RegExp ("/^[A-Z][a-z0-9_-]{4,7}/")
-        if(reg.test(event.target.value)){
-            this.setState({
-                currentError:"",
-                textLength: 0
-            });
-        }else{
-            this.setState({
-                currentError: "Login musi zaczynać się z dużej litery i mieć co najmniej 4 znaki"
-            });
-        }
-    }
-
-    handlePasswordValidation = (event) =>{
-        const reg = new RegExp ("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")
-        if(reg.test(event.target.value)){
-            this.setState({
-                currentError:"",
-                textLength: 0
-            });
-        }else{
-            this.setState({
-                currentError: "Hasło musi składać się z co najmniej 1 leczby 1 dużej litery i mieć minimum 8 znaków"
-            });
-        }
-    }
-
-    handleRepeatPasswordValidation = (event) =>{
-        if(this.state.password === event.target.value){
-            this.setState({
-                currentError:"",
-                textLength: 0
-            });
+    handleFormVali = (event) =>{
+        if(this.props.login === this.props.dataLogin || this.props.password === this.props.dataPassword){
+            this.setState({currentError: ""})
+            console.log("dada")
         }else {
-            this.setState({
-                currentError: "Hasła nie są identyczne"
-            });
+            event.preventDefault();
+            this.setState({currentError: "Login lub hasło są nieprawidłowe!"})
+
         }
     }
+
+
+
+
 
     handlePasswordChange=(event)=>{this.setState({password: event.target.value})}
-    handleRepeatPasswordChange=(event)=>{this.setState({repeatPassword: event.target.value})}
 
 
 
@@ -147,7 +120,6 @@ export default class RegisterForm extends Component {
                            maxLength={7}
                            onClick={this.loginFormClick}
                            onChange={this.handleLoginChange}
-                           onBlur={this.handleLoginValidation}
                     />
 
                     <label htmlFor={"formPassword"}>Hasło</label>
@@ -157,20 +129,10 @@ export default class RegisterForm extends Component {
                            value={this.state.password}
                            onFocus={this.passwordFormClick}
                            onChange={this.handlePasswordChange}
-                           onBlur={this.handlePasswordValidation}
                     />
 
-                    <label htmlFor={"formPassword"}>Powtórz Hasło</label>
 
-                    <input type={'password'}
-                           name={'repeatPassword'}
-                           value={this.state.repeatPassword}
-                           onFocus={this.passwordFormClick}
-                           onChange={this.handleRepeatPasswordChange}
-                           onBlur={this.handleRepeatPasswordValidation}
-                    />
-
-                    <FormButtons buttonText={this.props.buttonText}></FormButtons>
+                    <FormButtons buttonText={this.props.buttonText} onClick={this.handleFormVali}></FormButtons>
 
                 </form>
             </>
